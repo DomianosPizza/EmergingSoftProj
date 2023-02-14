@@ -1,0 +1,17 @@
+C:\Users\DLagunas\Documents\Year 2\Winter 2023\EmergingPlatforms\Library_Page\Library Page\Library Page\bin\Debug\net6.0-windows\Library Page.exe
+C:\Users\DLagunas\Documents\Year 2\Winter 2023\EmergingPlatforms\Library_Page\Library Page\Library Page\bin\Debug\net6.0-windows\Library Page.deps.json
+C:\Users\DLagunas\Documents\Year 2\Winter 2023\EmergingPlatforms\Library_Page\Library Page\Library Page\bin\Debug\net6.0-windows\Library Page.runtimeconfig.json
+C:\Users\DLagunas\Documents\Year 2\Winter 2023\EmergingPlatforms\Library_Page\Library Page\Library Page\bin\Debug\net6.0-windows\Library Page.dll
+C:\Users\DLagunas\Documents\Year 2\Winter 2023\EmergingPlatforms\Library_Page\Library Page\Library Page\bin\Debug\net6.0-windows\Library Page.pdb
+C:\Users\DLagunas\Documents\Year 2\Winter 2023\EmergingPlatforms\Library_Page\Library Page\Library Page\obj\Debug\net6.0-windows\Library Page.csproj.AssemblyReference.cache
+C:\Users\DLagunas\Documents\Year 2\Winter 2023\EmergingPlatforms\Library_Page\Library Page\Library Page\obj\Debug\net6.0-windows\Library_Page.Library.resources
+C:\Users\DLagunas\Documents\Year 2\Winter 2023\EmergingPlatforms\Library_Page\Library Page\Library Page\obj\Debug\net6.0-windows\Library Page.csproj.GenerateResource.cache
+C:\Users\DLagunas\Documents\Year 2\Winter 2023\EmergingPlatforms\Library_Page\Library Page\Library Page\obj\Debug\net6.0-windows\Library Page.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\DLagunas\Documents\Year 2\Winter 2023\EmergingPlatforms\Library_Page\Library Page\Library Page\obj\Debug\net6.0-windows\Library Page.AssemblyInfoInputs.cache
+C:\Users\DLagunas\Documents\Year 2\Winter 2023\EmergingPlatforms\Library_Page\Library Page\Library Page\obj\Debug\net6.0-windows\Library Page.AssemblyInfo.cs
+C:\Users\DLagunas\Documents\Year 2\Winter 2023\EmergingPlatforms\Library_Page\Library Page\Library Page\obj\Debug\net6.0-windows\Library Page.csproj.CoreCompileInputs.cache
+C:\Users\DLagunas\Documents\Year 2\Winter 2023\EmergingPlatforms\Library_Page\Library Page\Library Page\obj\Debug\net6.0-windows\Library Page.dll
+C:\Users\DLagunas\Documents\Year 2\Winter 2023\EmergingPlatforms\Library_Page\Library Page\Library Page\obj\Debug\net6.0-windows\refint\Library Page.dll
+C:\Users\DLagunas\Documents\Year 2\Winter 2023\EmergingPlatforms\Library_Page\Library Page\Library Page\obj\Debug\net6.0-windows\Library Page.pdb
+C:\Users\DLagunas\Documents\Year 2\Winter 2023\EmergingPlatforms\Library_Page\Library Page\Library Page\obj\Debug\net6.0-windows\Library Page.genruntimeconfig.cache
+C:\Users\DLagunas\Documents\Year 2\Winter 2023\EmergingPlatforms\Library_Page\Library Page\Library Page\obj\Debug\net6.0-windows\ref\Library Page.dll
