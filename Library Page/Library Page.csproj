@@ -1,5 +1,4 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net6.0-windows</TargetFramework>
@@ -8,5 +7,24 @@
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
-
+  <ItemGroup>
+    <PackageReference Include="Microsoft.ML" Version="2.0.0" />
+    <PackageReference Include="Microsoft.ML.FastTree" Version="2.0.0" />
+    <PackageReference Include="Microsoft.ML.Recommender" Version="0.20.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Data\" />
+  </ItemGroup>
+  <ItemGroup Label="myMachineLearning">
+    <None Include="myMachineLearning.consumption.cs">
+      <DependentUpon>myMachineLearning.mbconfig</DependentUpon>
+    </None>
+    <None Include="myMachineLearning.mlnet">
+      <DependentUpon>myMachineLearning.mbconfig</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="myMachineLearning.training.cs">
+      <DependentUpon>myMachineLearning.mbconfig</DependentUpon>
+    </None>
+  </ItemGroup>
 </Project>

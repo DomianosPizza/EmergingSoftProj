@@ -28,63 +28,75 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.txtSearchByGenre = new System.Windows.Forms.TextBox();
-            this.picLogo = new System.Windows.Forms.PictureBox();
-            this.picAd = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picAd)).BeginInit();
-            this.SuspendLayout();
+            btnSearch = new Button();
+            txtSearchByGenre = new TextBox();
+            picLogo = new PictureBox();
+            picAd = new PictureBox();
+            lblResultBox = new Label();
+            ((System.ComponentModel.ISupportInitialize)picLogo).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picAd).BeginInit();
+            SuspendLayout();
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(53, 275);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(112, 34);
-            this.btnSearch.TabIndex = 0;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = true;
+            btnSearch.Location = new Point(53, 275);
+            btnSearch.Name = "btnSearch";
+            btnSearch.Size = new Size(112, 34);
+            btnSearch.TabIndex = 0;
+            btnSearch.Text = "Search";
+            btnSearch.UseVisualStyleBackColor = true;
+            btnSearch.Click += btnSearch_Click;
             // 
             // txtSearchByGenre
             // 
-            this.txtSearchByGenre.Location = new System.Drawing.Point(40, 211);
-            this.txtSearchByGenre.Name = "txtSearchByGenre";
-            this.txtSearchByGenre.Size = new System.Drawing.Size(150, 31);
-            this.txtSearchByGenre.TabIndex = 1;
-            this.txtSearchByGenre.Text = "Search By Genre";
+            txtSearchByGenre.Location = new Point(40, 211);
+            txtSearchByGenre.Name = "txtSearchByGenre";
+            txtSearchByGenre.Size = new Size(150, 31);
+            txtSearchByGenre.TabIndex = 1;
+            txtSearchByGenre.Text = "Search By Genre";
             // 
             // picLogo
             // 
-            this.picLogo.Location = new System.Drawing.Point(617, 12);
-            this.picLogo.Name = "picLogo";
-            this.picLogo.Size = new System.Drawing.Size(150, 75);
-            this.picLogo.TabIndex = 2;
-            this.picLogo.TabStop = false;
+            picLogo.Location = new Point(617, 12);
+            picLogo.Name = "picLogo";
+            picLogo.Size = new Size(150, 75);
+            picLogo.TabIndex = 2;
+            picLogo.TabStop = false;
             // 
             // picAd
             // 
-            this.picAd.Location = new System.Drawing.Point(617, 114);
-            this.picAd.Name = "picAd";
-            this.picAd.Size = new System.Drawing.Size(150, 324);
-            this.picAd.TabIndex = 3;
-            this.picAd.TabStop = false;
+            picAd.Location = new Point(617, 114);
+            picAd.Name = "picAd";
+            picAd.Size = new Size(150, 324);
+            picAd.TabIndex = 3;
+            picAd.TabStop = false;
+            // 
+            // lblResultBox
+            // 
+            lblResultBox.AutoSize = true;
+            lblResultBox.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            lblResultBox.Location = new Point(256, 188);
+            lblResultBox.Name = "lblResultBox";
+            lblResultBox.Size = new Size(130, 54);
+            lblResultBox.TabIndex = 4;
+            lblResultBox.Text = "label1";
             // 
             // Library
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.picAd);
-            this.Controls.Add(this.picLogo);
-            this.Controls.Add(this.txtSearchByGenre);
-            this.Controls.Add(this.btnSearch);
-            this.Name = "Library";
-            this.Text = "Library";
-            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picAd)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(lblResultBox);
+            Controls.Add(picAd);
+            Controls.Add(picLogo);
+            Controls.Add(txtSearchByGenre);
+            Controls.Add(btnSearch);
+            Name = "Library";
+            Text = "Library";
+            ((System.ComponentModel.ISupportInitialize)picLogo).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picAd).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -93,5 +105,6 @@
         private TextBox txtSearchByGenre;
         private PictureBox picLogo;
         private PictureBox picAd;
+        private Label lblResultBox;
     }
 }
