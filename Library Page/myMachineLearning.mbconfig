@@ -1,0 +1,269 @@
+﻿{
+  "Scenario": "Recommendation",
+  "DataSource": {
+    "Type": "TabularFile",
+    "Version": 1,
+    "FilePath": "C:\\Users\\DLagunas\\Documents\\Year 2\\Winter 2023\\EmergingPlatforms\\TestDataSets\\Mall_Customers.csv",
+    "Delimiter": ",",
+    "DecimalMarker": ".",
+    "HasHeader": true,
+    "ColumnProperties": [
+      {
+        "ColumnName": "CustomerID",
+        "ColumnPurpose": "Ignore",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 3
+      },
+      {
+        "ColumnName": "Genre",
+        "ColumnPurpose": "User",
+        "ColumnDataFormat": "String",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 3
+      },
+      {
+        "ColumnName": "Age",
+        "ColumnPurpose": "Item",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 3
+      },
+      {
+        "ColumnName": "Annual Income (k$)",
+        "ColumnPurpose": "Label",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 3
+      },
+      {
+        "ColumnName": "Spending Score (1-100)",
+        "ColumnPurpose": "Ignore",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 3
+      }
+    ]
+  },
+  "Environment": {
+    "Type": "LocalCPU",
+    "Version": 1
+  },
+  "RunHistory": {
+    "Version": 3,
+    "Type": "Result",
+    "Trials": [
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "MatrixFactorization",
+        "Score": -0.469229932858922,
+        "RuntimeInSeconds": 1.463,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e3 * e4",
+          "e0": {
+            "OutputColumnName": "Age",
+            "InputColumnName": "Age",
+            "AddKeyValueAnnotationsAsText": false
+          },
+          "e1": {
+            "OutputColumnName": "Genre",
+            "InputColumnName": "Genre",
+            "AddKeyValueAnnotationsAsText": false
+          },
+          "e2": {
+            "LabelColumnName": "Annual Income (k$)",
+            "MatrixColumnIndexColumnName": "Genre",
+            "MatrixRowIndexColumnName": "Age",
+            "ApproximationRank": 10,
+            "LearningRate": 0.0039764291471473543,
+            "NumberOfIterations": 494,
+            "Quiet": true
+          },
+          "e3": {
+            "OutputColumnName": "Genre",
+            "InputColumnName": "Genre"
+          },
+          "e4": {
+            "OutputColumnName": "Age",
+            "InputColumnName": "Age"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "MatrixFactorization",
+        "Score": -1.2066586507220829,
+        "RuntimeInSeconds": 0.248,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e3 * e4",
+          "e0": {
+            "OutputColumnName": "Age",
+            "InputColumnName": "Age",
+            "AddKeyValueAnnotationsAsText": false
+          },
+          "e1": {
+            "OutputColumnName": "Genre",
+            "InputColumnName": "Genre",
+            "AddKeyValueAnnotationsAsText": false
+          },
+          "e2": {
+            "LabelColumnName": "Annual Income (k$)",
+            "MatrixColumnIndexColumnName": "Genre",
+            "MatrixRowIndexColumnName": "Age",
+            "ApproximationRank": 23,
+            "LearningRate": 0.0052485806952727761,
+            "NumberOfIterations": 73,
+            "Quiet": true
+          },
+          "e3": {
+            "OutputColumnName": "Genre",
+            "InputColumnName": "Genre"
+          },
+          "e4": {
+            "OutputColumnName": "Age",
+            "InputColumnName": "Age"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "MatrixFactorization",
+        "Score": -70.329901720907145,
+        "RuntimeInSeconds": 0.036,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e3 * e4",
+          "e0": {
+            "OutputColumnName": "Age",
+            "InputColumnName": "Age",
+            "AddKeyValueAnnotationsAsText": false
+          },
+          "e1": {
+            "OutputColumnName": "Genre",
+            "InputColumnName": "Genre",
+            "AddKeyValueAnnotationsAsText": false
+          },
+          "e2": {
+            "LabelColumnName": "Annual Income (k$)",
+            "MatrixColumnIndexColumnName": "Genre",
+            "MatrixRowIndexColumnName": "Age",
+            "ApproximationRank": 260,
+            "LearningRate": 0.0069277229130443319,
+            "NumberOfIterations": 10,
+            "Quiet": true
+          },
+          "e3": {
+            "OutputColumnName": "Genre",
+            "InputColumnName": "Genre"
+          },
+          "e4": {
+            "OutputColumnName": "Age",
+            "InputColumnName": "Age"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "MatrixFactorization",
+        "Score": -3341.6054695028583,
+        "RuntimeInSeconds": 69.843,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e3 * e4",
+          "e0": {
+            "OutputColumnName": "Age",
+            "InputColumnName": "Age",
+            "AddKeyValueAnnotationsAsText": false
+          },
+          "e1": {
+            "OutputColumnName": "Genre",
+            "InputColumnName": "Genre",
+            "AddKeyValueAnnotationsAsText": false
+          },
+          "e2": {
+            "LabelColumnName": "Annual Income (k$)",
+            "MatrixColumnIndexColumnName": "Genre",
+            "MatrixRowIndexColumnName": "Age",
+            "ApproximationRank": 10,
+            "LearningRate": 1.19925371782212E-05,
+            "NumberOfIterations": 16281,
+            "Quiet": true
+          },
+          "e3": {
+            "OutputColumnName": "Genre",
+            "InputColumnName": "Genre"
+          },
+          "e4": {
+            "OutputColumnName": "Age",
+            "InputColumnName": "Age"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "MatrixFactorization",
+        "Score": -4987.3818328061907,
+        "RuntimeInSeconds": 0.151,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e3 * e4",
+          "e0": {
+            "OutputColumnName": "Age",
+            "InputColumnName": "Age",
+            "AddKeyValueAnnotationsAsText": false
+          },
+          "e1": {
+            "OutputColumnName": "Genre",
+            "InputColumnName": "Genre",
+            "AddKeyValueAnnotationsAsText": false
+          },
+          "e2": {
+            "LabelColumnName": "Annual Income (k$)",
+            "MatrixColumnIndexColumnName": "Genre",
+            "MatrixRowIndexColumnName": "Age",
+            "ApproximationRank": 10,
+            "LearningRate": 2.5908570343195197E-07,
+            "NumberOfIterations": 34,
+            "Quiet": true
+          },
+          "e3": {
+            "OutputColumnName": "Genre",
+            "InputColumnName": "Genre"
+          },
+          "e4": {
+            "OutputColumnName": "Age",
+            "InputColumnName": "Age"
+          }
+        }
+      }
+    ],
+    "Estimators": {
+      "e0": "MapValueToKey",
+      "e1": "MapValueToKey",
+      "e2": "MatrixFactorization",
+      "e3": "MapKeyToValue",
+      "e4": "MapKeyToValue"
+    },
+    "Schema": "e0 * e1 * e2 * e3 * e4",
+    "MetricName": "RSquared",
+    "ModelFilePath": "C:\\Users\\DLagunas\\source\\repos\\EmergingSoftProj\\Library Page\\myMachineLearning.mlnet"
+  },
+  "Type": "TrainingConfig",
+  "Version": 3,
+  "TrainingOption": {
+    "Version": 0,
+    "Type": "RecommendationTrainingOption",
+    "TrainingTime": 60,
+    "LabelColumn": "Annual Income (k$)",
+    "UserIdColumn": "Genre",
+    "ItemIdColumn": "Age",
+    "Seed": 0
+  }
+}
