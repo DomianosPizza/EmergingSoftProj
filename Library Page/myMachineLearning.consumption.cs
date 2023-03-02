@@ -16,24 +16,20 @@ namespace Library_Page
         public class ModelInput
         {
             [LoadColumn(0)]
-            [ColumnName(@"CustomerID")]
-            public float CustomerID { get; set; }
+            [ColumnName(@"userId")]
+            public float UserId { get; set; }
 
             [LoadColumn(1)]
-            [ColumnName(@"Genre")]
-            public string Genre { get; set; }
+            [ColumnName(@"movieId")]
+            public float MovieId { get; set; }
 
             [LoadColumn(2)]
-            [ColumnName(@"Age")]
-            public float Age { get; set; }
+            [ColumnName(@"rating")]
+            public float Rating { get; set; }
 
             [LoadColumn(3)]
-            [ColumnName(@"Annual Income (k$)")]
-            public float Annual_Income__k__ { get; set; }
-
-            [LoadColumn(4)]
-            [ColumnName(@"Spending Score (1-100)")]
-            public float Spending_Score__1_100_ { get; set; }
+            [ColumnName(@"timestamp")]
+            public float Timestamp { get; set; }
 
         }
 
@@ -45,20 +41,17 @@ namespace Library_Page
         #region model output class
         public class ModelOutput
         {
-            [ColumnName(@"CustomerID")]
-            public float CustomerID { get; set; }
+            [ColumnName(@"userId")]
+            public float UserId { get; set; }
 
-            [ColumnName(@"Genre")]
-            public string Genre { get; set; }
+            [ColumnName(@"movieId")]
+            public float MovieId { get; set; }
 
-            [ColumnName(@"Age")]
-            public float Age { get; set; }
+            [ColumnName(@"rating")]
+            public float Rating { get; set; }
 
-            [ColumnName(@"Annual Income (k$)")]
-            public float Annual_Income__k__ { get; set; }
-
-            [ColumnName(@"Spending Score (1-100)")]
-            public float Spending_Score__1_100_ { get; set; }
+            [ColumnName(@"timestamp")]
+            public float Timestamp { get; set; }
 
             [ColumnName(@"Score")]
             public float Score { get; set; }

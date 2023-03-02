@@ -29,59 +29,84 @@
         private void InitializeComponent()
         {
             this.btnSearch = new System.Windows.Forms.Button();
-            this.txtSearchByGenre = new System.Windows.Forms.TextBox();
-            this.picLogo = new System.Windows.Forms.PictureBox();
-            this.picAd = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picAd)).BeginInit();
+            this.txtUID = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtMovieID = new System.Windows.Forms.TextBox();
+            this.lblResults = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(53, 275);
+            this.btnSearch.Location = new System.Drawing.Point(226, 230);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(112, 34);
+            this.btnSearch.Size = new System.Drawing.Size(78, 20);
             this.btnSearch.TabIndex = 0;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // txtSearchByGenre
+            // txtUID
             // 
-            this.txtSearchByGenre.Location = new System.Drawing.Point(40, 211);
-            this.txtSearchByGenre.Name = "txtSearchByGenre";
-            this.txtSearchByGenre.Size = new System.Drawing.Size(150, 31);
-            this.txtSearchByGenre.TabIndex = 1;
-            this.txtSearchByGenre.Text = "Search By Genre";
+            this.txtUID.Location = new System.Drawing.Point(212, 153);
+            this.txtUID.Margin = new System.Windows.Forms.Padding(2);
+            this.txtUID.Name = "txtUID";
+            this.txtUID.Size = new System.Drawing.Size(106, 23);
+            this.txtUID.TabIndex = 1;
             // 
-            // picLogo
+            // label1
             // 
-            this.picLogo.Location = new System.Drawing.Point(617, 12);
-            this.picLogo.Name = "picLogo";
-            this.picLogo.Size = new System.Drawing.Size(150, 75);
-            this.picLogo.TabIndex = 2;
-            this.picLogo.TabStop = false;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(186, 130);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(175, 21);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Type Your UserID Below";
             // 
-            // picAd
+            // label2
             // 
-            this.picAd.Location = new System.Drawing.Point(617, 114);
-            this.picAd.Name = "picAd";
-            this.picAd.Size = new System.Drawing.Size(150, 324);
-            this.picAd.TabIndex = 3;
-            this.picAd.TabStop = false;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(212, 178);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(108, 21);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Type Movie ID";
+            // 
+            // txtMovieID
+            // 
+            this.txtMovieID.Location = new System.Drawing.Point(212, 202);
+            this.txtMovieID.Name = "txtMovieID";
+            this.txtMovieID.Size = new System.Drawing.Size(100, 23);
+            this.txtMovieID.TabIndex = 6;
+            // 
+            // lblResults
+            // 
+            this.lblResults.AutoSize = true;
+            this.lblResults.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblResults.Location = new System.Drawing.Point(186, 50);
+            this.lblResults.Name = "lblResults";
+            this.lblResults.Size = new System.Drawing.Size(0, 21);
+            this.lblResults.TabIndex = 7;
             // 
             // Library
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.picAd);
-            this.Controls.Add(this.picLogo);
-            this.Controls.Add(this.txtSearchByGenre);
+            this.BackgroundImage = global::Library_Page.Properties.Resources.markets_cinema_screens_01;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(560, 270);
+            this.Controls.Add(this.lblResults);
+            this.Controls.Add(this.txtMovieID);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtUID);
             this.Controls.Add(this.btnSearch);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Library";
             this.Text = "Library";
-            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picAd)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -90,8 +115,10 @@
         #endregion
 
         private Button btnSearch;
-        private TextBox txtSearchByGenre;
-        private PictureBox picLogo;
-        private PictureBox picAd;
+        private TextBox txtUID;
+        private Label label1;
+        private Label label2;
+        private TextBox txtMovieID;
+        private Label lblResults;
     }
 }

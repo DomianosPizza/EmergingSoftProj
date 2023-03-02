@@ -12,7 +12,7 @@ namespace Library_Page
 {
     public partial class MyMachineLearning
     {
-        public const string RetrainFilePath =  @"C:\Users\DLagunas\Documents\Year 2\Winter 2023\EmergingPlatforms\TestDataSets\Mall_Customers.csv";
+        public const string RetrainFilePath =  @"C:\Users\capta\source\repos\DomianosPizza\EmergingSoftProj\Library Page\Resources\recommendation-ratings-train.txt";
         public const char RetrainSeparatorChar = ',';
         public const bool RetrainHasHeader =  true;
 
@@ -89,11 +89,11 @@ namespace Library_Page
         public static IEstimator<ITransformer> BuildPipeline(MLContext mlContext)
         {
             // Data process configuration with pipeline data transformations
-            var pipeline = mlContext.Transforms.Conversion.MapValueToKey(outputColumnName:@"Age",inputColumnName:@"Age",addKeyValueAnnotationsAsText:false)      
-                                    .Append(mlContext.Transforms.Conversion.MapValueToKey(outputColumnName:@"Genre",inputColumnName:@"Genre",addKeyValueAnnotationsAsText:false))      
-                                    .Append(mlContext.Recommendation().Trainers.MatrixFactorization(new MatrixFactorizationTrainer.Options(){LabelColumnName=@"Annual Income (k$)",MatrixColumnIndexColumnName=@"Genre",MatrixRowIndexColumnName=@"Age",ApproximationRank=10,LearningRate=0.00397642914714735,NumberOfIterations=494,Quiet=true}))      
-                                    .Append(mlContext.Transforms.Conversion.MapKeyToValue(outputColumnName:@"Genre",inputColumnName:@"Genre"))      
-                                    .Append(mlContext.Transforms.Conversion.MapKeyToValue(outputColumnName:@"Age",inputColumnName:@"Age"));
+            var pipeline = mlContext.Transforms.Conversion.MapValueToKey(outputColumnName:@"movieId",inputColumnName:@"movieId",addKeyValueAnnotationsAsText:false)      
+                                    .Append(mlContext.Transforms.Conversion.MapValueToKey(outputColumnName:@"userId",inputColumnName:@"userId",addKeyValueAnnotationsAsText:false))      
+                                    .Append(mlContext.Recommendation().Trainers.MatrixFactorization(new MatrixFactorizationTrainer.Options(){LabelColumnName=@"rating",MatrixColumnIndexColumnName=@"userId",MatrixRowIndexColumnName=@"movieId",ApproximationRank=10,LearningRate=0.0815726822511195,NumberOfIterations=32767,Quiet=true}))      
+                                    .Append(mlContext.Transforms.Conversion.MapKeyToValue(outputColumnName:@"userId",inputColumnName:@"userId"))      
+                                    .Append(mlContext.Transforms.Conversion.MapKeyToValue(outputColumnName:@"movieId",inputColumnName:@"movieId"));
 
             return pipeline;
         }
