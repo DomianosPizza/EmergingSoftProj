@@ -5,65 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.ML.Data;
-using Microsoft.ML.Trainers;
+using Microsoft.ML.Vision;
 using Microsoft.ML;
 
 namespace Library_Page
 {
     public partial class MyMachineLearning
     {
-        public const string RetrainFilePath =  @"C:\Users\DLagunas\Documents\Year 2\Winter 2023\EmergingPlatforms\TestDataSets\Mall_Customers.csv";
-        public const char RetrainSeparatorChar = ',';
-        public const bool RetrainHasHeader =  true;
 
-         /// <summary>
-        /// Train a new model with the provided dataset.
-        /// </summary>
-        /// <param name="outputModelPath">File path for saving the model. Should be similar to "C:\YourPath\ModelName.mlnet"</param>
-        /// <param name="inputDataFilePath">Path to the data file for training.</param>
-        /// <param name="separatorChar">Separator character for delimited training file.</param>
-        /// <param name="hasHeader">Boolean if training file has a header.</param>
-        public static void Train(string outputModelPath, string inputDataFilePath = RetrainFilePath, char separatorChar = RetrainSeparatorChar, bool hasHeader = RetrainHasHeader)
-        {
-            var mlContext = new MLContext();
-
-            var data = LoadIDataViewFromFile(mlContext, inputDataFilePath, separatorChar, hasHeader);
-            var model = RetrainModel(mlContext, data);
-            SaveModel(mlContext, model, data, outputModelPath);
-        }
-
-        /// <summary>
-        /// Load an IDataView from a file path.
-        /// </summary>
-        /// <param name="mlContext">The common context for all ML.NET operations.</param>
-        /// <param name="inputDataFilePath">Path to the data file for training.</param>
-        /// <param name="separatorChar">Separator character for delimited training file.</param>
-        /// <param name="hasHeader">Boolean if training file has a header.</param>
-        /// <returns>IDataView with loaded training data.</returns>
-        public static IDataView LoadIDataViewFromFile(MLContext mlContext, string inputDataFilePath, char separatorChar, bool hasHeader)
-        {
-            return mlContext.Data.LoadFromTextFile<ModelInput>(inputDataFilePath, separatorChar, hasHeader);
-        }
-
-
-
-        /// <summary>
-        /// Save a model at the specified path.
-        /// </summary>
-        /// <param name="mlContext">The common context for all ML.NET operations.</param>
-        /// <param name="model">Model to save.</param>
-        /// <param name="data">IDataView used to train the model.</param>
-        /// <param name="modelSavePath">File path for saving the model. Should be similar to "C:\YourPath\ModelName.mlnet.</param>
-        public static void SaveModel(MLContext mlContext, ITransformer model, IDataView data, string modelSavePath)
-        {
-            // Pull the data schema from the IDataView used for training the model
-            DataViewSchema dataViewSchema = data.Schema;
-
-            using (var fs = File.Create(modelSavePath))
-            {
-                mlContext.Model.Save(model, dataViewSchema, fs);
-            }
-        }
 
 
         /// <summary>
@@ -89,11 +38,9 @@ namespace Library_Page
         public static IEstimator<ITransformer> BuildPipeline(MLContext mlContext)
         {
             // Data process configuration with pipeline data transformations
-            var pipeline = mlContext.Transforms.Conversion.MapValueToKey(outputColumnName:@"Age",inputColumnName:@"Age",addKeyValueAnnotationsAsText:false)      
-                                    .Append(mlContext.Transforms.Conversion.MapValueToKey(outputColumnName:@"Genre",inputColumnName:@"Genre",addKeyValueAnnotationsAsText:false))      
-                                    .Append(mlContext.Recommendation().Trainers.MatrixFactorization(new MatrixFactorizationTrainer.Options(){LabelColumnName=@"Annual Income (k$)",MatrixColumnIndexColumnName=@"Genre",MatrixRowIndexColumnName=@"Age",ApproximationRank=10,LearningRate=0.00397642914714735,NumberOfIterations=494,Quiet=true}))      
-                                    .Append(mlContext.Transforms.Conversion.MapKeyToValue(outputColumnName:@"Genre",inputColumnName:@"Genre"))      
-                                    .Append(mlContext.Transforms.Conversion.MapKeyToValue(outputColumnName:@"Age",inputColumnName:@"Age"));
+            var pipeline = mlContext.Transforms.Conversion.MapValueToKey(outputColumnName:@"Label",inputColumnName:@"Label",addKeyValueAnnotationsAsText:false)      
+                                    .Append(mlContext.MulticlassClassification.Trainers.ImageClassification(labelColumnName:@"Label",scoreColumnName:@"Score",featureColumnName:@"ImageSource"))      
+                                    .Append(mlContext.Transforms.Conversion.MapKeyToValue(outputColumnName:@"PredictedLabel",inputColumnName:@"PredictedLabel"));
 
             return pipeline;
         }

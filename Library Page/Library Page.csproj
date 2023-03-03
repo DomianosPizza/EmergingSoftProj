@@ -10,6 +10,8 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.ML" Version="2.0.0" />
     <PackageReference Include="Microsoft.ML.Recommender" Version="0.20.0" />
+    <PackageReference Include="Microsoft.ML.Vision" Version="2.0.0" />
+    <PackageReference Include="SciSharp.TensorFlow.Redist" Version="2.3.1" />
   </ItemGroup>
   <ItemGroup Label="myMachineLearning">
     <None Include="myMachineLearning.consumption.cs">
@@ -22,5 +24,30 @@
     <None Include="myMachineLearning.training.cs">
       <DependentUpon>myMachineLearning.mbconfig</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup Label="ImageMachine">
+    <None Include="ImageMachine.consumption.cs">
+      <DependentUpon>ImageMachine.mbconfig</DependentUpon>
+    </None>
+    <None Include="ImageMachine.mlnet">
+      <DependentUpon>ImageMachine.mbconfig</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ImageMachine.training.cs">
+      <DependentUpon>ImageMachine.mbconfig</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

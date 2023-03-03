@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\DLagunas\\Source\\Repos\\EmergingSoftProj\\Library Page\\Library Page.csproj": {}
+    "C:\\Users\\jbursi\\Source\\Repos\\EmergingSoftProj\\Library Page\\Library Page.csproj": {}
   },
   "projects": {
-    "C:\\Users\\DLagunas\\Source\\Repos\\EmergingSoftProj\\Library Page\\Library Page.csproj": {
+    "C:\\Users\\jbursi\\Source\\Repos\\EmergingSoftProj\\Library Page\\Library Page.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\DLagunas\\Source\\Repos\\EmergingSoftProj\\Library Page\\Library Page.csproj",
+        "projectUniqueName": "C:\\Users\\jbursi\\Source\\Repos\\EmergingSoftProj\\Library Page\\Library Page.csproj",
         "projectName": "Library Page",
-        "projectPath": "C:\\Users\\DLagunas\\Source\\Repos\\EmergingSoftProj\\Library Page\\Library Page.csproj",
-        "packagesPath": "C:\\Users\\DLagunas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\DLagunas\\Source\\Repos\\EmergingSoftProj\\Library Page\\obj\\",
+        "projectPath": "C:\\Users\\jbursi\\Source\\Repos\\EmergingSoftProj\\Library Page\\Library Page.csproj",
+        "packagesPath": "C:\\Users\\jbursi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jbursi\\Source\\Repos\\EmergingSoftProj\\Library Page\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\DLagunas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\jbursi\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -52,6 +52,14 @@
             "Microsoft.ML.Recommender": {
               "target": "Package",
               "version": "[0.20.0, )"
+            },
+            "Microsoft.ML.Vision": {
+              "target": "Package",
+              "version": "[2.0.0, )"
+            },
+            "SciSharp.TensorFlow.Redist": {
+              "target": "Package",
+              "version": "[2.3.1, )"
             }
           },
           "imports": [

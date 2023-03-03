@@ -16,24 +16,12 @@ namespace Library_Page
         public class ModelInput
         {
             [LoadColumn(0)]
-            [ColumnName(@"CustomerID")]
-            public float CustomerID { get; set; }
+            [ColumnName(@"Label")]
+            public string Label { get; set; }
 
             [LoadColumn(1)]
-            [ColumnName(@"Genre")]
-            public string Genre { get; set; }
-
-            [LoadColumn(2)]
-            [ColumnName(@"Age")]
-            public float Age { get; set; }
-
-            [LoadColumn(3)]
-            [ColumnName(@"Annual Income (k$)")]
-            public float Annual_Income__k__ { get; set; }
-
-            [LoadColumn(4)]
-            [ColumnName(@"Spending Score (1-100)")]
-            public float Spending_Score__1_100_ { get; set; }
+            [ColumnName(@"ImageSource")]
+            public byte[] ImageSource { get; set; }
 
         }
 
@@ -45,23 +33,17 @@ namespace Library_Page
         #region model output class
         public class ModelOutput
         {
-            [ColumnName(@"CustomerID")]
-            public float CustomerID { get; set; }
+            [ColumnName(@"Label")]
+            public uint Label { get; set; }
 
-            [ColumnName(@"Genre")]
-            public string Genre { get; set; }
+            [ColumnName(@"ImageSource")]
+            public byte[] ImageSource { get; set; }
 
-            [ColumnName(@"Age")]
-            public float Age { get; set; }
-
-            [ColumnName(@"Annual Income (k$)")]
-            public float Annual_Income__k__ { get; set; }
-
-            [ColumnName(@"Spending Score (1-100)")]
-            public float Spending_Score__1_100_ { get; set; }
+            [ColumnName(@"PredictedLabel")]
+            public string PredictedLabel { get; set; }
 
             [ColumnName(@"Score")]
-            public float Score { get; set; }
+            public float[] Score { get; set; }
 
         }
 
@@ -77,6 +59,62 @@ namespace Library_Page
             var mlContext = new MLContext();
             ITransformer mlModel = mlContext.Model.Load(MLNetModelPath, out var _);
             return mlContext.Model.CreatePredictionEngine<ModelInput, ModelOutput>(mlModel);
+        }
+
+        /// <summary>
+        /// Use this method to predict scores for all possible labels.
+        /// </summary>
+        /// <param name="input">model input.</param>
+        /// <returns><seealso cref=" ModelOutput"/></returns>
+        public static IOrderedEnumerable<KeyValuePair<string, float>> PredictAllLabels(ModelInput input)
+        {
+            var predEngine = PredictEngine.Value;
+            var result = predEngine.Predict(input);
+            return GetSortedScoresWithLabels(result);
+        }
+
+        /// <summary>
+        /// Map the unlabeled result score array to the predicted label names.
+        /// </summary>
+        /// <param name="result">Prediction to get the labeled scores from.</param>
+        /// <returns>Ordered list of label and score.</returns>
+        /// <exception cref="Exception"></exception>
+        public static IOrderedEnumerable<KeyValuePair<string, float>> GetSortedScoresWithLabels(ModelOutput result)
+        {
+            var unlabeledScores = result.Score;
+            var labelNames = GetLabels(result);
+
+            Dictionary<string, float> labledScores = new Dictionary<string, float>();
+            for (int i = 0; i < labelNames.Count(); i++)
+            {
+                // Map the names to the predicted result score array
+                var labelName = labelNames.ElementAt(i);
+                labledScores.Add(labelName.ToString(), unlabeledScores[i]);
+            }
+
+            return labledScores.OrderByDescending(c => c.Value);
+        }
+
+        /// <summary>
+        /// Get the ordered label names.
+        /// </summary>
+        /// <param name="result">Predicted result to get the labels from.</param>
+        /// <returns>List of labels.</returns>
+        /// <exception cref="Exception"></exception>
+        private static IEnumerable<string> GetLabels(ModelOutput result)
+        {
+            var schema = PredictEngine.Value.OutputSchema;
+
+            var labelColumn = schema.GetColumnOrNull("Label");
+            if (labelColumn == null)
+            {
+                throw new Exception("Label column not found. Make sure the name searched for matches the name in the schema.");
+            }
+
+            // Key values contains an ordered array of the possible labels. This allows us to map the results to the correct label value.
+            var keyNames = new VBuffer<ReadOnlyMemory<char>>();
+            labelColumn.Value.GetKeyValues(ref keyNames);
+            return keyNames.DenseValues().Select(x => x.ToString());
         }
 
         /// <summary>
