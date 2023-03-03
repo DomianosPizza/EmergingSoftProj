@@ -89,11 +89,11 @@ namespace Library_Page
         public static IEstimator<ITransformer> BuildPipeline(MLContext mlContext)
         {
             // Data process configuration with pipeline data transformations
-            var pipeline = mlContext.Transforms.Conversion.MapValueToKey(outputColumnName:@"movieId",inputColumnName:@"movieId",addKeyValueAnnotationsAsText:false)      
-                                    .Append(mlContext.Transforms.Conversion.MapValueToKey(outputColumnName:@"userId",inputColumnName:@"userId",addKeyValueAnnotationsAsText:false))      
-                                    .Append(mlContext.Recommendation().Trainers.MatrixFactorization(new MatrixFactorizationTrainer.Options(){LabelColumnName=@"rating",MatrixColumnIndexColumnName=@"userId",MatrixRowIndexColumnName=@"movieId",ApproximationRank=92,LearningRate=0.0766023747360975,NumberOfIterations=62,Quiet=true}))      
-                                    .Append(mlContext.Transforms.Conversion.MapKeyToValue(outputColumnName:@"userId",inputColumnName:@"userId"))      
-                                    .Append(mlContext.Transforms.Conversion.MapKeyToValue(outputColumnName:@"movieId",inputColumnName:@"movieId"));
+            var pipeline = mlContext.Transforms.Conversion.MapValueToKey(outputColumnName:@"userId",inputColumnName:@"userId",addKeyValueAnnotationsAsText:false)      
+                                    .Append(mlContext.Transforms.Conversion.MapValueToKey(outputColumnName:@"movieId",inputColumnName:@"movieId",addKeyValueAnnotationsAsText:false))      
+                                    .Append(mlContext.Recommendation().Trainers.MatrixFactorization(new MatrixFactorizationTrainer.Options(){LabelColumnName=@"rating",MatrixColumnIndexColumnName=@"movieId",MatrixRowIndexColumnName=@"userId",ApproximationRank=10,LearningRate=0.0133521466684913,NumberOfIterations=32767,Quiet=true}))      
+                                    .Append(mlContext.Transforms.Conversion.MapKeyToValue(outputColumnName:@"movieId",inputColumnName:@"movieId"))      
+                                    .Append(mlContext.Transforms.Conversion.MapKeyToValue(outputColumnName:@"userId",inputColumnName:@"userId"));
 
             return pipeline;
         }
