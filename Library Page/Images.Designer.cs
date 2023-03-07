@@ -35,7 +35,7 @@
             // 
             // btnImageSummon
             // 
-            this.btnImageSummon.Location = new System.Drawing.Point(310, 315);
+            this.btnImageSummon.Location = new System.Drawing.Point(355, 306);
             this.btnImageSummon.Name = "btnImageSummon";
             this.btnImageSummon.Size = new System.Drawing.Size(128, 34);
             this.btnImageSummon.TabIndex = 0;
@@ -45,10 +45,10 @@
             // 
             // picImage
             // 
-            this.picImage.Location = new System.Drawing.Point(298, 124);
+            this.picImage.Location = new System.Drawing.Point(325, 74);
             this.picImage.Name = "picImage";
-            this.picImage.Size = new System.Drawing.Size(160, 121);
-            this.picImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.picImage.Size = new System.Drawing.Size(190, 189);
+            this.picImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picImage.TabIndex = 1;
             this.picImage.TabStop = false;
             // 
@@ -64,7 +64,6 @@
             this.Load += new System.EventHandler(this.Images_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picImage)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
