@@ -3,7 +3,7 @@
   "DataSource": {
     "Type": "TabularFile",
     "Version": 1,
-    "FilePath": "C:\\Users\\capta\\source\\repos\\DomianosPizza\\EmergingSoftProj\\Library Page\\Resources\\recommendation-ratings-train.txt",
+    "FilePath": "C:\\Users\\DLagunas\\source\\repos\\DomianosPizza\\EmergingSoftProj\\Library Page\\datasets\\recommendation-ratings-train.txt",
     "Delimiter": ",",
     "DecimalMarker": ".",
     "HasHeader": true,
@@ -54,8 +54,8 @@
         "Version": 1,
         "Type": "Trial",
         "TrainerName": "MatrixFactorization",
-        "Score": -0.3957436066203448,
-        "RuntimeInSeconds": 56.256,
+        "Score": -0.38667517496732895,
+        "RuntimeInSeconds": 3.498,
         "Parameter": {
           "_SCHEMA_": "e0 * e1 * e2 * e3 * e4",
           "e0": {
@@ -73,8 +73,8 @@
             "MatrixColumnIndexColumnName": "userId",
             "MatrixRowIndexColumnName": "movieId",
             "ApproximationRank": 10,
-            "LearningRate": 0.08157268225111948,
-            "NumberOfIterations": 32767,
+            "LearningRate": 0.31534276404546407,
+            "NumberOfIterations": 468,
             "Quiet": true
           },
           "e3": {
@@ -91,8 +91,45 @@
         "Version": 1,
         "Type": "Trial",
         "TrainerName": "MatrixFactorization",
-        "Score": -0.40888407137592164,
-        "RuntimeInSeconds": 56.422,
+        "Score": -0.39448602719777792,
+        "RuntimeInSeconds": 3.855,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e3 * e4",
+          "e0": {
+            "OutputColumnName": "movieId",
+            "InputColumnName": "movieId",
+            "AddKeyValueAnnotationsAsText": false
+          },
+          "e1": {
+            "OutputColumnName": "userId",
+            "InputColumnName": "userId",
+            "AddKeyValueAnnotationsAsText": false
+          },
+          "e2": {
+            "LabelColumnName": "rating",
+            "MatrixColumnIndexColumnName": "userId",
+            "MatrixRowIndexColumnName": "movieId",
+            "ApproximationRank": 10,
+            "LearningRate": 0.32238779449020188,
+            "NumberOfIterations": 477,
+            "Quiet": true
+          },
+          "e3": {
+            "OutputColumnName": "userId",
+            "InputColumnName": "userId"
+          },
+          "e4": {
+            "OutputColumnName": "movieId",
+            "InputColumnName": "movieId"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "MatrixFactorization",
+        "Score": -0.39802624688898169,
+        "RuntimeInSeconds": 4.004,
         "Parameter": {
           "_SCHEMA_": "e0 * e1 * e2 * e3 * e4",
           "e0": {
@@ -110,8 +147,8 @@
             "MatrixColumnIndexColumnName": "userId",
             "MatrixRowIndexColumnName": "movieId",
             "ApproximationRank": 12,
-            "LearningRate": 0.13639427177333976,
-            "NumberOfIterations": 32767,
+            "LearningRate": 0.31915482259743216,
+            "NumberOfIterations": 529,
             "Quiet": true
           },
           "e3": {
@@ -128,8 +165,8 @@
         "Version": 1,
         "Type": "Trial",
         "TrainerName": "MatrixFactorization",
-        "Score": -0.43076180997016378,
-        "RuntimeInSeconds": 15.062,
+        "Score": -0.39898905448770039,
+        "RuntimeInSeconds": 3.387,
         "Parameter": {
           "_SCHEMA_": "e0 * e1 * e2 * e3 * e4",
           "e0": {
@@ -146,9 +183,9 @@
             "LabelColumnName": "rating",
             "MatrixColumnIndexColumnName": "userId",
             "MatrixRowIndexColumnName": "movieId",
-            "ApproximationRank": 19,
-            "LearningRate": 0.054653016019771496,
-            "NumberOfIterations": 7450,
+            "ApproximationRank": 10,
+            "LearningRate": 0.325653515715018,
+            "NumberOfIterations": 429,
             "Quiet": true
           },
           "e3": {
@@ -165,8 +202,8 @@
         "Version": 1,
         "Type": "Trial",
         "TrainerName": "MatrixFactorization",
-        "Score": -0.46119903802823203,
-        "RuntimeInSeconds": 3.233,
+        "Score": -0.40334308650530803,
+        "RuntimeInSeconds": 3.814,
         "Parameter": {
           "_SCHEMA_": "e0 * e1 * e2 * e3 * e4",
           "e0": {
@@ -183,46 +220,9 @@
             "LabelColumnName": "rating",
             "MatrixColumnIndexColumnName": "userId",
             "MatrixRowIndexColumnName": "movieId",
-            "ApproximationRank": 27,
-            "LearningRate": 0.2280591597479848,
-            "NumberOfIterations": 1366,
-            "Quiet": true
-          },
-          "e3": {
-            "OutputColumnName": "userId",
-            "InputColumnName": "userId"
-          },
-          "e4": {
-            "OutputColumnName": "movieId",
-            "InputColumnName": "movieId"
-          }
-        }
-      },
-      {
-        "Version": 1,
-        "Type": "Trial",
-        "TrainerName": "MatrixFactorization",
-        "Score": -0.46330817884398323,
-        "RuntimeInSeconds": 1.861,
-        "Parameter": {
-          "_SCHEMA_": "e0 * e1 * e2 * e3 * e4",
-          "e0": {
-            "OutputColumnName": "movieId",
-            "InputColumnName": "movieId",
-            "AddKeyValueAnnotationsAsText": false
-          },
-          "e1": {
-            "OutputColumnName": "userId",
-            "InputColumnName": "userId",
-            "AddKeyValueAnnotationsAsText": false
-          },
-          "e2": {
-            "LabelColumnName": "rating",
-            "MatrixColumnIndexColumnName": "userId",
-            "MatrixRowIndexColumnName": "movieId",
-            "ApproximationRank": 17,
-            "LearningRate": 0.039832870739511791,
-            "NumberOfIterations": 826,
+            "ApproximationRank": 10,
+            "LearningRate": 0.29939118193153413,
+            "NumberOfIterations": 424,
             "Quiet": true
           },
           "e3": {
@@ -252,7 +252,7 @@
   "TrainingOption": {
     "Version": 0,
     "Type": "RecommendationTrainingOption",
-    "TrainingTime": 0,
+    "TrainingTime": 900,
     "LabelColumn": "rating",
     "UserIdColumn": "userId",
     "ItemIdColumn": "movieId",

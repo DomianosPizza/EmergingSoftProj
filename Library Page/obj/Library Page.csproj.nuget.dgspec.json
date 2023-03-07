@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\capta\\Source\\Repos\\DomianosPizza\\EmergingSoftProj\\Library Page\\Library Page.csproj": {}
+    "C:\\Users\\DLagunas\\Source\\Repos\\DomianosPizza\\EmergingSoftProj\\Library Page\\Library Page.csproj": {}
   },
   "projects": {
-    "C:\\Users\\capta\\Source\\Repos\\DomianosPizza\\EmergingSoftProj\\Library Page\\Library Page.csproj": {
+    "C:\\Users\\DLagunas\\Source\\Repos\\DomianosPizza\\EmergingSoftProj\\Library Page\\Library Page.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\capta\\Source\\Repos\\DomianosPizza\\EmergingSoftProj\\Library Page\\Library Page.csproj",
+        "projectUniqueName": "C:\\Users\\DLagunas\\Source\\Repos\\DomianosPizza\\EmergingSoftProj\\Library Page\\Library Page.csproj",
         "projectName": "Library Page",
-        "projectPath": "C:\\Users\\capta\\Source\\Repos\\DomianosPizza\\EmergingSoftProj\\Library Page\\Library Page.csproj",
-        "packagesPath": "C:\\Users\\capta\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\capta\\Source\\Repos\\DomianosPizza\\EmergingSoftProj\\Library Page\\obj\\",
+        "projectPath": "C:\\Users\\DLagunas\\Source\\Repos\\DomianosPizza\\EmergingSoftProj\\Library Page\\Library Page.csproj",
+        "packagesPath": "C:\\Users\\DLagunas\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\DLagunas\\source\\repos\\DomianosPizza\\EmergingSoftProj\\Library Page\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\capta\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\DLagunas\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -73,7 +73,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     }

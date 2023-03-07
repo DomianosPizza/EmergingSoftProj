@@ -1,3 +1,5 @@
+using System.Diagnostics;
+
 namespace Library_Page
 {
     public partial class Library : Form
@@ -11,10 +13,11 @@ namespace Library_Page
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            lblResults.Text= string.Empty;
             bool validUID = int.TryParse(txtUID.Text, out _id);
             bool validMovieID = int.TryParse(txtMovieID.Text, out _movieId);
             if (!validUID && !validMovieID) {
-                lblResults.Text = "That isn't a valid userID";
+                lblResults.Text = "A value you inputed was not a valid id";
             }
             else
             {
@@ -25,8 +28,19 @@ namespace Library_Page
                 };
                 //Load model and predict output
                 var result = MyMachineLearning.Predict(sampleData);
-
-                
+                Debug.WriteLine($"Predicted rating - {Math.Round(result.Score)}");
+                if(result.Score >= 4.0f)
+                {
+                    lblResults.Text = "User " + _id + " would like enjoy this film "+_movieId;
+                }
+                if(result.Score < 4.0f && result.Score > 2.9f)
+                {
+                    lblResults.Text = "User " + _id + " would maybe like film "+_movieId;
+                }
+                if (result.Score < 2.9f)
+                {
+                    lblResults.Text = "User " + _id + " would not like film " + _movieId;
+                }
             }
             
         }
