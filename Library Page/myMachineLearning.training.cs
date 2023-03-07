@@ -12,7 +12,7 @@ namespace Library_Page
 {
     public partial class MyMachineLearning
     {
-        public const string RetrainFilePath =  @"C:\Users\capta\source\repos\DomianosPizza\EmergingSoftProj\Library Page\Resources\recommendation-ratings-train.txt";
+        public const string RetrainFilePath =  @"C:\Users\DLagunas\source\repos\DomianosPizza\EmergingSoftProj\Library Page\datasets\recommendation-ratings-train.txt";
         public const char RetrainSeparatorChar = ',';
         public const bool RetrainHasHeader =  true;
 
@@ -91,7 +91,7 @@ namespace Library_Page
             // Data process configuration with pipeline data transformations
             var pipeline = mlContext.Transforms.Conversion.MapValueToKey(outputColumnName:@"movieId",inputColumnName:@"movieId",addKeyValueAnnotationsAsText:false)      
                                     .Append(mlContext.Transforms.Conversion.MapValueToKey(outputColumnName:@"userId",inputColumnName:@"userId",addKeyValueAnnotationsAsText:false))      
-                                    .Append(mlContext.Recommendation().Trainers.MatrixFactorization(new MatrixFactorizationTrainer.Options(){LabelColumnName=@"rating",MatrixColumnIndexColumnName=@"userId",MatrixRowIndexColumnName=@"movieId",ApproximationRank=10,LearningRate=0.0815726822511195,NumberOfIterations=32767,Quiet=true}))      
+                                    .Append(mlContext.Recommendation().Trainers.MatrixFactorization(new MatrixFactorizationTrainer.Options(){LabelColumnName=@"rating",MatrixColumnIndexColumnName=@"userId",MatrixRowIndexColumnName=@"movieId",ApproximationRank=10,LearningRate=0.315342764045464,NumberOfIterations=468,Quiet=true}))      
                                     .Append(mlContext.Transforms.Conversion.MapKeyToValue(outputColumnName:@"userId",inputColumnName:@"userId"))      
                                     .Append(mlContext.Transforms.Conversion.MapKeyToValue(outputColumnName:@"movieId",inputColumnName:@"movieId"));
 
