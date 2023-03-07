@@ -403,3 +403,5 @@ FodyWeavers.xsd
 /Library Page/obj/Debug/net6.0-windows/Library Page.designer.deps.json
 /Library Page/obj/Debug/net6.0-windows/Library Page.designer.runtimeconfig.json
 /Library Page/obj/Debug/net6.0-windows/Library Page.GeneratedMSBuildEditorConfig.editorconfig
+/Library Page/obj/Release/net6.0-windows/Library Page.assets.cache
+/.vs/EmergingSoftProj/v17/.wsuo
